@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{944DDDDE-DA58-4832-8750-E1740E44F7C7}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{9C12F286-DFA6-4326-881C-875D0D2C1F3F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAACVWrQK55Am18b1wLVbj2raX8OzCvoHramYRQ8ixFaJQAAAAAOgAAAAAIAACAAAAAwwJU5s6lElOX463YAsot2Ws7LLQt0KHyLN62FREsRTzAAAACyXZmRBNUfvG65C7M/SkTwIOJaKa8wxS8pZI/UI6fdTpWxfUWppebhQ5g/Rj0yFYVAAAAAOQHE18sP1dODzRcY30vwj60ekq2fpaCN5ngnzV3Qp1oy4b4Y3DAskJOjlGANwjLF/2IyfaKCfWSS3CKQHTaHXQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACRhIvCJPlbf0ZD0Z9k7bgDvgNbIVYacEwOn8bdV9oQNgAAAAAOgAAAAAIAACAAAACi2YXaKVl4PzHUFmaEWOxGiF1LgrpSAeoqrzlydJdtrTAAAAAvCe8dLoOOvGt2cS8sR/jFHoXsAO/v3wXeUlSq/UdwaC4A636qzahWDKLJhsokzaRAAAAAZ7YWkQyvIz+8aiIY3DFHQI4EwI/6nuHrMSBMySkKHpzGJ1EQNhe8gknOXr4Wes/zOwo6RJIFpzaVxNL8nI1tIw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -345,18 +345,18 @@
         <NodeLayout
           Size="173,42"
           Id="Package\Delete dimLocation"
-          TopLeft="65.0833333333333,353.083333333333" />
+          TopLeft="643.527777777778,48.861111111111" />
         <NodeLayout
           Size="174,42"
           Id="Package\Create dimLocation"
-          TopLeft="63.0833333333333,435.083333333333" />
+          TopLeft="641.527777777778,130.861111111111" />
         <NodeLayout
           Size="166,42"
           Id="Package\Load dimLocation"
-          TopLeft="63.0833333333333,513.083333333333" />
+          TopLeft="641.527777777778,208.861111111111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="150.833333333333,395.083333333333">
+          TopLeft="729.277777777778,90.861111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -378,7 +378,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="148.083333333333,477.083333333333">
+          TopLeft="726.527777777778,172.861111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -401,18 +401,18 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Delete dimDate"
-          TopLeft="63.8888888888889,614.027777777778" />
+          TopLeft="946.333333333333,51.8055555555555" />
         <NodeLayout
           Size="156,42"
           Id="Package\Create dimDate"
-          TopLeft="59.4444444444445,704.027777777778" />
+          TopLeft="941.888888888889,141.805555555556" />
         <NodeLayout
           Size="147,42"
           Id="Package\Load dimDate"
-          TopLeft="61.6666666666667,784.027777777778" />
+          TopLeft="944.111111111111,221.805555555556" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="139.416666666667,656.027777777778">
+          TopLeft="1021.86111111111,93.8055555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -434,7 +434,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="136.305555555556,746.027777777778">
+          TopLeft="1018.75,183.805555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

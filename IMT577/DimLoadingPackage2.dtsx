@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimLoadingPackage2"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{780E08E0-3334-4560-9926-A8C93F2FC966}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{3107783C-6579-4EE1-83E7-89652E5D08DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACe5QzrdrID5n01veXRGjFywoHCCEiOILj6pjcEF/EojAAAAAAOgAAAAAIAACAAAADNLztk+yLGfrVn20BWyNudAYetnPNa+rP+7AjzSF0KazAAAACnuyKKouuyWHovdPx5ywQCeRV7TzIIPUW1C6CN66CHWPPE2dhOdkyJLkbZIBCRqY9AAAAA2IWNpowB+Yoy5phKvYlIHVTjVLVGFJrEvDO/GEh6W7AhutF0iRR1iJBiHzZh4DQwP2rJvaBZSewskoh1VUBXjw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBN8th3jVG6K/EB6GR2Q3eV+BC/bxrK7SPEh9GRgKK/gAAAAAOgAAAAAIAACAAAAAePKyKcPnHL3xUVcF5rwNkwITH/b/+zBfEzQCe3uXAuDAAAAC1DTMLpuyd9ro2Ct9CcqT39m8x/F0nStyf+v/2iiTecaMRl52ABr4m3IPr+u9BovNAAAAAm5muzhsqJpDe4XMzCiAnf6w4AEqV4GhK6S3M7vPwXYc7iBpyraqNApBsuRdvsJcvj3H8LrGK9ZETOGA0s2Dbxg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -365,18 +365,18 @@
         <NodeLayout
           Size="172,42"
           Id="Package\Delete dimReseller"
-          TopLeft="166,292" />
+          TopLeft="602,21" />
         <NodeLayout
           Size="173,42"
           Id="Package\Create dimReseller"
-          TopLeft="163,378" />
+          TopLeft="599,107" />
         <NodeLayout
           Size="165,42"
           Id="Package\Load dimReseller"
-          TopLeft="169,455" />
+          TopLeft="605,184" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="250.75,334">
+          TopLeft="686.75,63">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -398,7 +398,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="250.5,420">
+          TopLeft="686.5,149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
