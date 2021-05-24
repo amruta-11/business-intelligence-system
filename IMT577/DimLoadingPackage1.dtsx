@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ML-RefVm-765087"
   DTS:CreatorName="ML-RefVm-765087\imt577user"
-  DTS:DTSID="{C8449452-221D-4BF4-AA47-F67DFCDDB070}"
+  DTS:DTSID="{4E4E0FBC-CE8F-4639-A015-6D9A8DBC021E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.157"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{2DF0A2A3-5983-41A3-802D-52AC845127E2}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{D94037C4-D98C-4E21-85D6-238957007C58}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ML-RefVm-765087.DestinationSystem.sa]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E27FF93F-D394-4519-969D-B3488B192D04}"
+      DTS:DTSID="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
       DTS:ObjectName="ML-RefVm-765087.DestinationSystem.sa">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADbi2RJU8nvGyvqObzz45BKLxyVHJbAONutj7w8VwxyGwAAAAAOgAAAAAIAACAAAAD8WOOIL7/xRboVVNfh2epz+cRsguGUwZOvuHtnY0hP3TAAAACmCHboKTOSNubm8rceVA4ma6E5YxC2na3HRRz8jwqEqKAy/dnxCxuKsVDFlZn9f3NAAAAA0QS3vljYbAap5osn8qkJT5gL1BLQxRAMfbo2FlA4BDOJlOTD2RXh2UX7TSagwe6NXg8ZfcoP3cxlVf42UV7R9g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABYNVzMcj9UhVG1tS0ggxqAt2Z5mDQ1YcXny0B49e8IbgAAAAAOgAAAAAIAACAAAAB0NGVSR0EYR/sd6dZkqF/H/0W2esJViS2/LTPWb/xI3TAAAADts/dcIQBNt7eoQonGInutRzbdUgaRO4vXquDcAwTHlD2aBHSkCaZKvx/WNekyLohAAAAAAmLyWZJUyNNRTdrEGx9jcHdcIEQ2VWKFk5K5pd3TT7WCK4+doPke7Bw70KERqoGWF4T448CJeBUPZzz+faKQLg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -38,33 +38,33 @@
       DTS:refId="Package\Create dimChannel"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8512314c-428c-4398-a7a2-74cd40a091c0}"
+      DTS:DTSID="{95D73A0F-C24B-47D7-A694-5250D87C6F8A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA; CREATE TABLE dbo.dimChannel&#xA; (&#xA; dimChannelID INT IDENTITY(1,1) CONSTRAINT PK_dimChannel PRIMARY KEY CLUSTERED NOT NULL,&#xA; dimSourceChannelID INT NOT NUll, --Natural Key&#xA; dimSourceCategoryID INT NOT NUll, --Natural Key&#xA; dimChannelCategoryName VARCHAR(50) NOT NULL,&#xA; dimChannelName VARCHAR(50) NOT NULL&#xA; );&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA;&#xA;&#x9;-- ====================================&#xA;&#x9;-- Create dimChannel table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;CREATE TABLE dbo.dimChannel&#xA;&#x9;(&#xA;&#x9;dimChannelID INT IDENTITY(1,1) CONSTRAINT PK_dimChannel PRIMARY KEY CLUSTERED NOT NULL, &#x9;-- SurrogateKey&#xA;&#x9;SourceChannelID INT NUll, &#x9;--Natural Key&#xA;&#x9;SourceCategoryID INT NUll, &#x9;--Natural Key&#xA;&#x9;ChannelName VARCHAR(50) NULL,&#xA;&#x9;ChannelCategoryName VARCHAR(50) NULL&#xA;&#x9;);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Create dimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0078F0D0-A7E4-4B39-BB1D-4290AADBF87A}"
+      DTS:DTSID="{5FA328EF-B5E4-4E04-A752-2CB6142CDEFD}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="CREATE TABLE dbo.DimDate&#xA;(&#xA;DimDateID INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_DimDate PRIMARY KEY,&#xA;FullDate [date] NOT NULL,&#xA;DayNumberOfWeek [tinyint] NOT NULL,&#xA;DayNameOfWeek [varchar] (9) NOT NULL,&#xA;DayNumberOfMonth [tinyint] NOT NULL,&#xA;DayNumberOfYear [int] NOT NULL,&#xA;WeekdayFlag [int] NOT NULL,&#xA;WeekNumberOfYear [tinyint] NOT NULL,&#xA;[MonthName] [varchar](9) NOT NULL,&#xA;MonthNumberOfYear [tinyint] NOT NULL,&#xA;CalendarQuarter [tinyint] NOT NULL,&#xA;CalendarYear [int] NOT NULL,&#xA;CalendarSemester [tinyint] NOT NULL,&#xA;CreatedDate DATETIME NOT NULL&#xA;,CreatedBy NVARCHAR(255) NOT NULL&#xA;,ModifiedDate DATETIME NULL&#xA;,ModifiedBy NVARCHAR(255) NULL&#xA;);&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -72,50 +72,50 @@
       DTS:refId="Package\Create dimLocation"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E3218073-521E-4721-A239-9C6EAECD2C5D}"
+      DTS:DTSID="{E7C4A70B-109D-492F-BC5A-3F46FAD8313B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;CREATE TABLE dbo.dimLocation&#xA;&#x9;(&#xA;&#x9;dimLocationID INT IDENTITY(1,1) CONSTRAINT PK_dimLocation PRIMARY KEY CLUSTERED NOT NULL, &#xA;&#x9;dimLocationAddress VARCHAR(100) NOT NUll,&#xA;&#x9;dimLocationCity VARCHAR(50) NOT NULL,&#xA;&#x9;dimLocationPostalCode INT NOT NULL,&#xA;&#x9;dimLocationState_Province VARCHAR(50) NOT NULL,&#xA;&#x9;dimLocationCountry VARCHAR(50) NOT NULL&#xA;&#x9;);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;CREATE TABLE dbo.dimLocation&#xA;&#x9;(&#xA;&#x9;dimLocationID INT IDENTITY(1,1) CONSTRAINT PK_dimLocation PRIMARY KEY CLUSTERED NOT NULL,&#x9;-- Surrogate Key&#xA;&#x9;LocationAddress NVARCHAR(255) NUll,&#xA;&#x9;LocationCity NVARCHAR(255) NULL,&#xA;&#x9;LocationPostalCode NVARCHAR(255) NULL,&#xA;&#x9;LocationState_Province NVARCHAR(255) NULL,&#xA;&#x9;LocationCountry NVARCHAR(255) NULL&#xA;&#x9;);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Create dimProduct"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1EC51090-D439-47F6-BB1B-1D2BEE554FA3}"
+      DTS:DTSID="{335C51AC-D232-477D-BC6B-CEA7EAF6AFDD}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;CREATE TABLE dbo.dimProduct&#xA;&#x9;(&#xA;&#x9;dimProductID INT IDENTITY(1,1) CONSTRAINT PK_dimProduct PRIMARY KEY CLUSTERED NOT NULL,&#xA;&#x9;&#xA;&#x9;dimSourceProductID INT NOT NUll,&#xA;&#x9;dimSourceTypeID INT NOT NULL,&#xA;&#x9;dimSourceCategoryID INT NOT NULL,&#xA;&#x9;&#xA;&#x9;dimProductName VARCHAR(100) NOT NULL,&#xA;&#x9;dimProductType VARCHAR(20) NOT NULL,&#xA;&#x9;dimProductCategory VARCHAR(20) NOT NULL,&#xA;&#x9;dimProductRetailPrice float,&#xA;&#x9;dimProductWholesalePrice float,&#xA;&#x9;dimProductCost float,&#xA;&#x9;dimProductRetailProfit float,&#xA;&#x9;dimProductWholesaleUnitProfit float,&#xA;&#x9;dimProductProfitMarginUnitPercent float&#xA;&#x9;);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;CREATE TABLE dbo.dimProduct&#xA;&#x9;(&#xA;&#x9;dimProductID INT IDENTITY(1,1) CONSTRAINT PK_dimProduct PRIMARY KEY CLUSTERED NOT NULL,&#x9;&#x9;-- Surrogate Key&#xA;&#x9;&#xA;&#x9;SourceProductID INT NULL, &#x9;-- Natural Key&#xA;&#x9;SourceTypeID INT NULL,&#xA;&#x9;SourceCategoryID INT NULL,&#xA;&#x9;&#xA;&#x9;ProductName NVARCHAR(50) NULL,&#xA;&#x9;ProductType NVARCHAR(50) NULL,&#xA;&#x9;ProductCategory NVARCHAR(50) NULL,&#xA;&#x9;ProductRetailPrice float,&#xA;&#x9;ProductWholesalePrice float,&#xA;&#x9;ProductCost float,&#xA;&#x9;ProductRetailProfit float,&#xA;&#x9;ProductWholesaleUnitProfit float,&#xA;&#x9;ProductProfitMarginUnitPercent float&#xA;&#x9;);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Delete dimChannel"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{962ce149-797e-47f2-bd96-a211675914f6}"
+      DTS:DTSID="{C652802F-3FD0-4478-B12F-D0BB04E0A689}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA; DROP TABLE dbo.dimChannel;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -123,16 +123,16 @@
       DTS:refId="Package\Delete dimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{54C69D9B-8600-4F92-92BB-949AA931F9EB}"
+      DTS:DTSID="{E00B6D2B-D39E-45FA-8083-A3CCF800E527}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'DimDate')&#xA;BEGIN&#xA;&#x9;DROP TABLE dbo.DimDate;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -140,16 +140,16 @@
       DTS:refId="Package\Delete dimLocation"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{66E6F673-3E83-4E8D-8513-249DE0111552}"
+      DTS:DTSID="{FCA77903-B5B8-4276-8AA9-BF7C0ECADC34}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimLocation;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -157,84 +157,101 @@
       DTS:refId="Package\Delete dimProduct"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{228E3EE6-0999-4261-9EAE-4F852FB50B1E}"
+      DTS:DTSID="{41164BCA-0AF5-42B2-8585-28118145ABBE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimProduct;&#xA;END&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\dimChannel Unknown"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5142E6F1-1890-42F0-A27E-8E12C8677927}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="dimChannel Unknown"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="-- =============================&#xA;-- Begin load of unknown member&#xA;-- =============================&#xA;&#xA;SET IDENTITY_INSERT dbo.dimChannel ON;&#xA;&#xA;INSERT INTO dbo.dimChannel&#xA;(&#xA;dimChannelID&#xA;,SourceChannelID&#xA;,SourceCategoryID&#xA;,ChannelName&#xA;,ChannelCategoryName&#xA;)&#xA;VALUES&#xA;( &#xA;-1&#xA;,-1&#xA;,-1 &#xA;,'Unknown'&#xA;,'Unknown'&#xA;);&#xA;&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimChannel OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\dimLocation Unknown"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C77B172D-FCA9-4472-A123-A21B7327BF21}"
+      DTS:DTSID="{4CB52F0B-44E2-4F35-9425-C6A2BD100B22}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="dimLocation Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="SET IDENTITY_INSERT dbo.dimLocation ON;&#xA;&#xA;INSERT INTO dbo.dimLocation&#xA;(&#xA;dimLocationAddress,&#xA;dimLocationCity,&#xA;dimLocationPostalCode,&#xA;dimLocationState_Province,&#xA;dimLocationCountry&#xA;)&#xA;VALUES&#xA;( &#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;);&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimLocation OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT dbo.dimLocation ON;&#xA;&#xA;INSERT INTO dbo.dimLocation&#xA;(&#xA;dimLocationID,&#xA;LocationAddress,&#xA;LocationCity,&#xA;LocationPostalCode,&#xA;LocationState_Province,&#xA;LocationCountry&#xA;)&#xA;VALUES&#xA;(&#xA;-1&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;);&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimLocation OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\dimProduct Unknown"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8A67918A-0742-400D-833C-5B5C1616323A}"
+      DTS:DTSID="{7A39F1F3-0B91-4B6D-B24E-6B69BB11697A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="dimProduct Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="SET IDENTITY_INSERT dbo.dimProduct ON;&#xA;&#xA;INSERT INTO dbo.dimProduct&#xA;(&#xA;dimSourceProductID INT NOT NUll,&#xA;dimSourceTypeID INT NOT NULL,&#xA;dimSourceCategoryID INT NOT NULL,&#xA;&#x9;&#xA;dimProductName VARCHAR(100) NOT NULL,&#xA;dimProductType VARCHAR(20) NOT NULL,&#xA;dimProductCategory VARCHAR(20) NOT NULL,&#xA;dimProductRetailPrice INT,&#xA;dimProductWholesalePrice INT,&#xA;dimProductCost INT,&#xA;dimProductRetailProfit INT,&#xA;dimProductWholesaleUnitProfit INT,&#xA;dimProductProfitMarginUnitPercent INT&#xA;)&#xA;VALUES&#xA;( &#xA;-1&#xA;,-1&#xA;,-1&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;);&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimProduct OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT dbo.dimProduct ON;&#xA;&#xA;INSERT INTO dbo.dimProduct&#xA;(&#xA;dimProductID,&#xA;SourceProductID,&#xA;SourceTypeID,&#xA;SourceCategoryID,&#xA;ProductName,&#xA;ProductType,&#xA;ProductCategory,&#xA;ProductRetailPrice,&#xA;ProductWholesalePrice,&#xA;ProductCost,&#xA;ProductRetailProfit,&#xA;ProductWholesaleUnitProfit,&#xA;ProductProfitMarginUnitPercent&#xA;)&#xA;VALUES&#xA;(&#xA;-1&#xA;,-1&#xA;,-1&#xA;,-1&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,'Unknown'&#xA;,-1&#xA;,-1&#xA;,-1&#xA;,-1&#xA;,-1&#xA;,-1&#xA;);&#xA;&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimProduct OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load dimChannel"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{50687de4-d211-412c-afa7-1dee6c4551a7}"
+      DTS:DTSID="{2006BEC4-6666-4CAD-84A0-2A53DF87F96B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA; -- ====================================&#xA; -- Load dimChannel table&#xA; -- ====================================&#xA;&#xA; INSERT INTO dbo.dimChannel&#xA; (&#xA; dimSourceChannelID&#xA; ,dimSourceCategoryID&#xA; ,dimChannelCategoryName&#xA; ,dimChannelName&#xA; )&#xA; SELECT &#xA; dbo.StageChannel.ChannelID AS dimSourceChannelID&#xA; ,dbo.StageChannel.ChannelCategoryID AS dimSourceChannelCategory&#xA; ,dbo.StageChannelCategory.ChannelCategory AS dimCategoryName&#xA; ,dbo.StageChannel.Channel AS dimChannelName&#xA;&#xA; FROM StageChannel&#xA; INNER JOIN StageChannelCategory&#xA; ON StageChannel.ChannelCategoryID = StageChannelCategory.ChannelCategoryID;&#xA;END&#xA;GO &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA;&#x9;-- ====================================&#xA;&#x9;-- Load dimChannel table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;INSERT INTO dbo.dimChannel&#xA;&#x9;(&#xA;&#x9;SourceChannelID&#xA;&#x9;,SourceCategoryID&#xA;&#x9;,ChannelName&#xA;&#x9;,ChannelCategoryName&#xA;&#x9;)&#xA;&#x9;SELECT &#xA;&#x9;dbo.StageChannel.ChannelID AS SourceChannelID&#xA;&#x9;,dbo.StageChannel.ChannelCategoryID AS SourceChannelCategory&#xA;&#x9;,dbo.StageChannel.Channel AS ChannelName&#xA;&#x9;,dbo.StageChannelCategory.ChannelCategory AS CategoryName&#xA;&#xA;&#x9;FROM StageChannel&#xA;&#x9;INNER JOIN StageChannelCategory&#xA;&#x9;ON StageChannel.ChannelCategoryID = StageChannelCategory.ChannelCategoryID;&#xA;END&#xA;GO " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load dimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{931331BC-C7CE-405E-85D4-63D8C34A1DD2}"
+      DTS:DTSID="{3D2AFC12-A0CD-4F29-85D6-4449A0ED290E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
           SQLTask:SqlStatementSource="-- =========================================================================&#xA;-- Create Stored Proceudre InsDimDateyearly to load one year of data&#xA;-- =========================================================================&#xA;&#xA;IF EXISTS (SELECT name FROM sys.procedures WHERE name = 'InsDimDateYearly')&#xA;BEGIN&#xA;&#x9;DROP PROCEDURE dbo.InsDimDateYearly;&#xA;END&#xA;GO&#xA;&#xA;CREATE PROC [dbo].[InsDimDateYearly]&#xA;( &#xA;&#x9;@Year INT=NULL&#xA;)&#xA;AS&#xA;SET NOCOUNT ON;&#xA;&#xA;DECLARE @Date DATE, @FirstDate Date, @LastDate Date;&#xA;&#xA;SELECT @Year=COALESCE(@Year,YEAR(DATEADD(d,1,MAX(DimDateID)))) FROM dbo.DimDate;&#xA;&#xA;SET @FirstDate=DATEFROMPARTS(COALESCE(@Year,YEAR(GETDATE())-1), 01, 01); -- First Day of the Year&#xA;SET @LastDate=DATEFROMPARTS(COALESCE(@Year,YEAR(GETDATE())-1), 12, 31); -- Last Day of the Year&#xA;&#xA;SET @Date=@FirstDate;&#xA;-- create CTE with all dates needed for load&#xA;;WITH DateCTE AS&#xA;(&#xA;SELECT @FirstDate AS StartDate -- earliest date to load in table&#xA;UNION ALL&#xA;SELECT DATEADD(day, 1, StartDate)&#xA;FROM DateCTE -- recursively select the date + 1 over and over&#xA;WHERE DATEADD(day, 1, StartDate) &lt;= @LastDate -- last date to load in table&#xA;)&#xA;&#xA;-- load date dimension table with all dates&#xA;INSERT INTO dbo.DimDate &#xA;&#x9;(&#xA;&#x9;FullDate &#xA;&#x9;,DayNumberOfWeek &#xA;&#x9;,DayNameOfWeek &#xA;&#x9;,DayNumberOfMonth &#xA;&#x9;,DayNumberOfYear &#xA;&#x9;,WeekdayFlag&#xA;&#x9;,WeekNumberOfYear &#xA;&#x9;,[MonthName] &#xA;&#x9;,MonthNumberOfYear &#xA;&#x9;,CalendarQuarter &#xA;&#x9;,CalendarYear &#xA;&#x9;,CalendarSemester&#xA;&#x9;,CreatedDate&#xA;&#x9;,CreatedBy&#xA;&#x9;,ModifiedDate&#xA;&#x9;,ModifiedBy &#xA;&#x9;)&#xA;SELECT &#xA;&#x9; CAST(StartDate AS DATE) AS FullDate&#xA;&#x9;,DATEPART(dw, StartDate) AS DayNumberOfWeek&#xA;&#x9;,DATENAME(dw, StartDate) AS DayNameOfWeek&#xA;&#x9;,DAY(StartDate) AS DayNumberOfMonth&#xA;&#x9;,DATEPART(dy, StartDate) AS DayNumberOfYear&#xA;&#x9;,CASE DATENAME(dw, StartDate) WHEN 'Saturday' THEN 0 WHEN 'Sunday' THEN 0 ELSE 1 END AS WeekdayFlag&#xA;&#x9;,DATEPART(wk, StartDate) AS WeekNumberOfYear&#xA;&#x9;,DATENAME(mm, StartDate) AS [MonthName]&#xA;&#x9;,MONTH(StartDate) AS MonthNumberOfYear&#xA;&#x9;,DATEPART(qq, StartDate) AS CalendarQuarter&#xA;&#x9;,YEAR(StartDate) AS CalendarYear&#xA;&#x9;,(CASE WHEN MONTH(StartDate)&gt;=1 AND MONTH(StartDate) &lt;=6 THEN 1 ELSE 2 END) AS CalendarSemester&#xA;&#x9;,DATEADD(dd,DATEDIFF(dd,GETDATE(), '2013-01-01'),GETDATE()) AS CreatedDate&#xA;&#x9;,'company\SQLServerServiceAccount' AS CreatedBy&#xA;&#x9;,NULL AS ModifiedDate&#xA;&#x9;,NULL AS ModifiedBy&#xA;FROM DateCTE&#xA;OPTION (MAXRECURSION 0);-- prevents infinate loop from running more than once&#xA;GO&#xA;&#xA;-- ========================================================================&#xA;-- Execute the procedure for 2013 and 2014 (those are the years you need)&#xA;-- ========================================================================&#xA;EXEC InsDimDateYearly 2013&#xA;GO&#xA;&#xA;EXEC InsDimDateYearly 2014&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -242,51 +259,34 @@
       DTS:refId="Package\Load dimLocation"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4A4CCB84-1365-43DC-A5DB-CF302B8923C0}"
+      DTS:DTSID="{C8B9809D-CC1E-4A21-9EB8-4F9006436F00}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;-- ====================================&#xA;&#x9;-- Load dimLocation table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;INSERT INTO dbo.dimLocation&#xA;&#x9;(&#xA;&#x9;dimLocationAddress,&#xA;&#x9;dimLocationCity,&#xA;&#x9;dimLocationPostalCode,&#xA;&#x9;dimLocationState_Province,&#xA;&#x9;dimLocationCountry&#xA;&#x9;)&#xA;&#x9;SELECT &#xA;&#x9;dbo.StageCustomer.Address AS dimLocationAddress,&#xA;&#x9;dbo.StageCustomer.City AS dimLocationCity,&#xA;&#x9;dbo.StageCustomer.PostalCode AS dimLocationPostalCode,&#xA;&#x9;dbo.StageCustomer.StateProvince AS dimLocationState_Province,&#xA;&#x9;dbo.StageCustomer.Country AS dimLocationCountry&#xA;&#x9;FROM StageCustomer&#xA;&#xA;&#x9;UNION&#xA;&#x9;&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageStore.Address AS dimLocationAddress,&#xA;&#x9;dbo.StageStore.City AS dimLocationCity,&#xA;&#x9;dbo.StageStore.PostalCode AS dimLocationPostalCode,&#xA;&#x9;dbo.StageStore.StateProvince AS dimLocationState_Province,&#xA;&#x9;dbo.StageStore.Country AS dimLocationCountry&#xA;&#x9;FROM StageStore&#xA;&#x9;&#xA;&#x9;UNION&#xA;&#x9;&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageReseller.Address AS dimLocationAddress,&#xA;&#x9;dbo.StageReseller.City AS dimLocationCity,&#xA;&#x9;dbo.StageReseller.PostalCode AS dimLocationPostalCode,&#xA;&#x9;dbo.StageReseller.StateProvince AS dimLocationState_Province,&#xA;&#x9;dbo.StageReseller.Country AS dimLocationCountry&#xA;&#x9;FROM StageReseller&#xA;&#x9;&#xA;END&#xA;GO &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;-- ====================================&#xA;&#x9;-- Load dimLocation table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;INSERT INTO dbo.dimLocation&#xA;&#x9;(&#xA;&#x9;LocationAddress,&#xA;&#x9;LocationCity,&#xA;&#x9;LocationPostalCode,&#xA;&#x9;LocationState_Province,&#xA;&#x9;LocationCountry&#xA;&#x9;)&#xA;&#x9;SELECT &#xA;&#x9;dbo.StageCustomer.Address AS LocationAddress,&#xA;&#x9;dbo.StageCustomer.City AS LocationCity,&#xA;&#x9;dbo.StageCustomer.PostalCode AS LocationPostalCode,&#xA;&#x9;dbo.StageCustomer.StateProvince AS LocationState_Province,&#xA;&#x9;dbo.StageCustomer.Country AS LocationCountry&#xA;&#x9;FROM StageCustomer&#xA;&#xA;&#x9;UNION&#xA;&#x9;&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageStore.Address AS LocationAddress,&#xA;&#x9;dbo.StageStore.City AS LocationCity,&#xA;&#x9;dbo.StageStore.PostalCode AS LocationPostalCode,&#xA;&#x9;dbo.StageStore.StateProvince AS LocationState_Province,&#xA;&#x9;dbo.StageStore.Country AS LocationCountry&#xA;&#x9;FROM StageStore&#xA;&#x9;&#xA;&#x9;UNION&#xA;&#x9;&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageReseller.Address AS LocationAddress,&#xA;&#x9;dbo.StageReseller.City AS LocationCity,&#xA;&#x9;dbo.StageReseller.PostalCode AS LocationPostalCode,&#xA;&#x9;dbo.StageReseller.StateProvince AS LocationState_Province,&#xA;&#x9;dbo.StageReseller.Country AS LocationCountry&#xA;&#x9;FROM StageReseller&#xA;&#x9;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load dimProduct"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{06F6ED76-72E4-4658-8490-229648C25F7D}"
+      DTS:DTSID="{DA2FC27A-9371-4A65-867D-C5F89260A3F3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimProduct"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;-- ====================================&#xA;&#x9;-- Load dimProduct table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;INSERT INTO dbo.dimProduct&#xA;&#x9;(&#xA;&#x9;dimSourceProductID,&#xA;&#x9;dimSourceTypeID,&#xA;&#x9;dimSourceCategoryID,&#xA;&#x9;dimProductName,&#xA;&#x9;dimProductType,&#xA;&#x9;dimProductCategory,&#xA;&#x9;dimProductRetailPrice,&#xA;&#x9;dimProductWholesalePrice,&#xA;&#x9;dimProductCost,&#xA;&#x9;dimProductRetailProfit,&#xA;&#x9;dimProductWholesaleUnitProfit,&#xA;&#x9;dimProductProfitMarginUnitPercent&#xA;&#x9;)&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageProduct.ProductID AS dimSourceProductID&#xA;&#x9;,dbo.StageProduct.ProductTypeID AS dimSourceTypeID&#xA;&#x9;,dbo.StageProductType.ProductCategoryID AS dimSourceCategoryID&#xA;&#x9;,dbo.StageProduct.Product AS dimProductName&#xA;&#x9;,dbo.StageProductType.ProductType AS dimProductType&#xA;&#x9;,dbo.StageProductCategory.ProductCategory AS dimProductCategory&#xA;&#x9;,dbo.StageProduct.Price AS dimProductRetailPrice&#xA;&#x9;,dbo.StageProduct.WholesalePrice AS dimProductWholesalePrice&#xA;&#x9;,dbo.StageProduct.Cost AS dimProductCost&#xA;&#x9;,(dbo.StageProduct.Price) - (dbo.StageProduct.Cost) AS dimProductRetailProfit&#xA;&#x9;,(dbo.StageProduct.WholesalePrice) - (dbo.StageProduct.Cost) AS dimProductWholesaleUnitProfit&#xA;&#x9;,((dbo.StageProduct.Price-dbo.StageProduct.Cost)/dbo.StageProduct.Price) * 100 AS dimProductProfitMarginUnitPercent --retailprofit//price * 100&#xA;&#x9;&#xA;&#x9;FROM StageProduct&#xA;&#x9;INNER JOIN StageProductType&#xA;&#x9;ON StageProduct.ProductTypeID = StageProductType.ProductTypeID&#xA;&#x9;INNER JOIN StageProductCategory&#xA;&#x9;ON StageProductType.ProductCategoryID = StageProductCategory.ProductCategoryID&#xA;&#x9;&#xA;END&#xA;GO " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Load Unknown"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3272628b-81a5-4126-85d2-992ae866d89d}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Load Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E27FF93F-D394-4519-969D-B3488B192D04}"
-          SQLTask:SqlStatementSource="SET IDENTITY_INSERT dbo.dimChannel ON;&#xA;&#xA;INSERT INTO dbo.dimChannel&#xA;(&#xA;dimChannelID&#xA;,dimSourceChannelID&#xA;,dimSourceCategoryID&#xA;,dimChannelCategoryName&#xA;,dimChannelName&#xA;)&#xA;VALUES&#xA;( &#xA;-1&#xA;,-1&#xA;,-1 &#xA;,'Unknown'&#xA;,'Unknown'&#xA;);&#xA;-- Turn the identity insert to OFF so new rows auto assign identities&#xA;SET IDENTITY_INSERT dbo.dimChannel OFF;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;-- ====================================&#xA;&#x9;-- Load dimProduct table&#xA;&#x9;-- ====================================&#xA;&#xA;&#x9;INSERT INTO dbo.dimProduct&#xA;&#x9;(&#xA;&#x9;SourceProductID,&#xA;&#x9;SourceTypeID,&#xA;&#x9;SourceCategoryID,&#xA;&#x9;&#xA;&#x9;ProductName,&#xA;&#x9;ProductType,&#xA;&#x9;ProductCategory,&#xA;&#x9;ProductRetailPrice,&#xA;&#x9;ProductWholesalePrice,&#xA;&#x9;ProductCost,&#xA;&#x9;ProductRetailProfit,&#xA;&#x9;ProductWholesaleUnitProfit,&#xA;&#x9;ProductProfitMarginUnitPercent&#xA;&#x9;)&#xA;&#x9;SELECT&#xA;&#x9;dbo.StageProduct.ProductID AS SourceProductID&#xA;&#x9;,dbo.StageProduct.ProductTypeID AS SourceTypeID&#xA;&#x9;,dbo.StageProductType.ProductCategoryID AS SourceCategoryID&#xA;&#x9;&#xA;&#x9;,dbo.StageProduct.Product AS ProductName&#xA;&#x9;,dbo.StageProductType.ProductType AS ProductType&#xA;&#x9;,dbo.StageProductCategory.ProductCategory AS ProductCategory&#xA;&#x9;,dbo.StageProduct.Price AS ProductRetailPrice&#xA;&#x9;,dbo.StageProduct.WholesalePrice AS ProductWholesalePrice&#xA;&#x9;,dbo.StageProduct.Cost AS ProductCost&#xA;&#x9;,(dbo.StageProduct.Price) - (dbo.StageProduct.Cost) AS ProductRetailProfit&#xA;&#x9;,(dbo.StageProduct.WholesalePrice) - (dbo.StageProduct.Cost) AS ProductWholesaleUnitProfit&#xA;&#x9;,((dbo.StageProduct.Price-dbo.StageProduct.Cost)/dbo.StageProduct.Price) * 100 AS ProductProfitMarginUnitPercent --retailprofit//price * 100&#xA;&#x9;&#xA;&#x9;FROM StageProduct&#xA;&#x9;INNER JOIN StageProductType&#xA;&#x9;ON StageProduct.ProductTypeID = StageProductType.ProductTypeID&#xA;&#x9;INNER JOIN StageProductCategory&#xA;&#x9;ON StageProductType.ProductCategoryID = StageProductCategory.ProductCategoryID&#xA;&#x9;&#xA;END&#xA;GO &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -294,7 +294,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{5EDEFA84-DFD8-4704-B0E6-1A59BF4BC903}"
+      DTS:DTSID="{2FB39381-E668-4838-89B0-9A66B61DFE50}"
       DTS:From="Package\Delete dimLocation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -302,7 +302,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7FC33367-F52A-4FD0-BF81-C131DABA96A1}"
+      DTS:DTSID="{9F66B47A-AF21-468E-84EC-F1030940F789}"
       DTS:From="Package\Create dimLocation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -310,7 +310,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{b2f78654-02ee-440f-bf36-0b8471049199}"
+      DTS:DTSID="{513C13E7-3737-4A5C-A7B1-61686739E798}"
       DTS:From="Package\Create dimChannel"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
@@ -318,15 +318,15 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
       DTS:CreationName=""
-      DTS:DTSID="{a9e78335-2fb5-4f13-bd49-e085c17a7bc3}"
+      DTS:DTSID="{1C531506-322A-4F23-BE18-3DA12D7AA05D}"
       DTS:From="Package\Load dimChannel"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 12"
-      DTS:To="Package\Load Unknown" />
+      DTS:To="Package\dimChannel Unknown" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{B2E445A7-C2C7-464D-A251-8BA4DCC9C9B6}"
+      DTS:DTSID="{7DC6916E-4A27-4F85-9C60-832C927F1E99}"
       DTS:From="Package\Delete dimDate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -334,7 +334,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{FF528FD0-A865-4C45-9044-C7447094C33E}"
+      DTS:DTSID="{14B55F21-2C60-4881-91FC-8850D598CD9C}"
       DTS:From="Package\Create dimDate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -342,7 +342,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{7C5F99E8-8976-4288-A361-01ED0217F6E8}"
+      DTS:DTSID="{BC2A59B7-E715-4827-981F-00BE329C642A}"
       DTS:From="Package\Delete dimProduct"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -350,7 +350,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{737B5255-5B78-4F05-928A-0F692CAEC1F4}"
+      DTS:DTSID="{A6BED254-F5B7-4319-AA81-86CA40636B16}"
       DTS:From="Package\Create dimProduct"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -358,7 +358,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{697AC732-EC89-4767-B6AD-E9595B19BED5}"
+      DTS:DTSID="{8C93C771-2220-43D4-8604-41E426335602}"
       DTS:From="Package\Load dimProduct"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -366,7 +366,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{68463CA0-481A-4DFD-86A3-FBD7F960A4CF}"
+      DTS:DTSID="{35D46F2C-0798-4F62-980B-36E2318498DD}"
       DTS:From="Package\Load dimLocation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -374,7 +374,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{a0a5f4eb-af09-4e26-a722-16431503e655}"
+      DTS:DTSID="{CBF87557-CB9B-47D4-A9E5-9425AD94A05A}"
       DTS:From="Package\Delete dimChannel"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
@@ -399,15 +399,15 @@
         <NodeLayout
           Size="156,42"
           Id="Package\Create dimDate"
-          TopLeft="941.888888888889,141.805555555556" />
+          TopLeft="907.888888888889,134.805555555556" />
         <NodeLayout
           Size="174,42"
           Id="Package\Create dimLocation"
-          TopLeft="641.527777777778,130.861111111111" />
+          TopLeft="648.527777777778,115.861111111111" />
         <NodeLayout
           Size="171,42"
           Id="Package\Create dimProduct"
-          TopLeft="343,122" />
+          TopLeft="342,110" />
         <NodeLayout
           Size="173,42"
           Id="Package\Delete dimChannel"
@@ -415,15 +415,23 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Delete dimDate"
-          TopLeft="946.333333333333,51.8055555555555" />
+          TopLeft="911.333333333333,53.8055555555555" />
         <NodeLayout
           Size="173,42"
           Id="Package\Delete dimLocation"
-          TopLeft="643.527777777778,48.861111111111" />
+          TopLeft="649.527777777778,47.861111111111" />
         <NodeLayout
           Size="169,42"
           Id="Package\Delete dimProduct"
           TopLeft="344.5,41.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\dimLocation Unknown"
+          TopLeft="644,264" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\dimProduct Unknown"
+          TopLeft="332,268" />
         <NodeLayout
           Size="165,42"
           Id="Package\Load dimChannel"
@@ -431,33 +439,33 @@
         <NodeLayout
           Size="147,42"
           Id="Package\Load dimDate"
-          TopLeft="944.111111111111,221.805555555556" />
+          TopLeft="910.111111111111,214.805555555556" />
         <NodeLayout
           Size="166,42"
           Id="Package\Load dimLocation"
-          TopLeft="641.527777777778,208.861111111111" />
+          TopLeft="650.527777777778,185.861111111111" />
         <NodeLayout
           Size="162,42"
           Id="Package\Load dimProduct"
-          TopLeft="342,203" />
+          TopLeft="342,190" />
         <NodeLayout
-          Size="152,42"
-          Id="Package\Load Unknown"
-          TopLeft="80.404761904762,247.984126984127" />
+          Size="187,42"
+          Id="Package\dimChannel Unknown"
+          TopLeft="70.404761904762,252.984126984127" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="729.277777777778,90.861111111111">
+          TopLeft="735.777777777778,89.861111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40"
+              EndConnector="0,26"
               Start="0,0"
-              End="0,32.5">
+              End="0,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -468,18 +476,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="726.527777777778,172.861111111111">
+          TopLeft="734.527777777778,157.861111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,28.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -512,18 +520,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="158.940476190476,224.269841269841">
+          TopLeft="162.690476190476,224.269841269841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.7142857142856"
+              EndConnector="0,28.714285714286"
               Start="0,0"
-              End="0,16.2142857142856">
+              End="0,21.214285714286">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2142857142856" />
+                    End="0,21.214285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -534,18 +542,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1021.86111111111,93.8055555555556">
+          TopLeft="987.361111111111,95.8055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,39.0000000000005"
               Start="0,0"
-              End="0,40.5">
+              End="0,31.5000000000005">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,31.5000000000005" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -556,7 +564,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1018.75,183.805555555556">
+          TopLeft="984.75,176.805555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -578,18 +586,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="428.75,83.5">
+          TopLeft="428.25,83.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.5"
+              EndConnector="0,26.5"
               Start="0,0"
-              End="0,31">
+              End="0,19">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31" />
+                    End="0,19" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -600,18 +608,62 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="425.75,164">
+          TopLeft="425.25,152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,31.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="423.25,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="735.513888888889,227.861111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.138888888889"
+              Start="0,0"
+              End="0,28.638888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.638888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -634,70 +686,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,19.150793650794" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\dimProduct Unknown"
-          TopLeft="338,286" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="426.25,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187,42"
-          Id="Package\dimLocation Unknown"
-          TopLeft="643,302" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="724.527777777778,250.861111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.9722222222219,51.138888888889"
-              Start="0,0"
-              End="11.9722222222219,43.638888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5694444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5694444444445"
-                    Point2="0,25.5694444444445"
-                    Point3="4,25.5694444444445" />
-                  <mssgle:LineSegment
-                    End="7.97222222222194,25.5694444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.97222222222194,25.5694444444445"
-                    Point2="11.9722222222219,25.5694444444445"
-                    Point3="11.9722222222219,29.5694444444445" />
-                  <mssgle:LineSegment
-                    End="11.9722222222219,43.638888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
