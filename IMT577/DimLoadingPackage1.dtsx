@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{D94037C4-D98C-4E21-85D6-238957007C58}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{A36FBDD7-3D7F-4F67-A774-F705E1744F70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABYNVzMcj9UhVG1tS0ggxqAt2Z5mDQ1YcXny0B49e8IbgAAAAAOgAAAAAIAACAAAAB0NGVSR0EYR/sd6dZkqF/H/0W2esJViS2/LTPWb/xI3TAAAADts/dcIQBNt7eoQonGInutRzbdUgaRO4vXquDcAwTHlD2aBHSkCaZKvx/WNekyLohAAAAAAmLyWZJUyNNRTdrEGx9jcHdcIEQ2VWKFk5K5pd3TT7WCK4+doPke7Bw70KERqoGWF4T448CJeBUPZzz+faKQLg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNj2eu6zbCHazPcAYRv7+OAkFH50uIAa+yO1ONMIshiAAAAAAOgAAAAAIAACAAAABxEzT9D4o6gRBMswlBIZ7hLo2JBw2OQdbCiVWCi23xTTAAAADH1qik0h4Z5I9kMEeQHUuGzgvMOG8S6M2KbEiK6bKJ6utyZZBCwLLxadL2xA8ZLURAAAAAgbxMVIW8f/b1lIHwEYhuDmxyT/zuluTULIvwGfwa0f+7siIdDze6hm38lhtAvK49mml92w/ND2bS/L5KH8Hbrw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -43,7 +43,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -60,7 +60,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -77,7 +77,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -94,7 +94,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -111,12 +111,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA; DROP TABLE dbo.dimChannel;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA;&#xA;&#x9;DELETE FROM dbo.dimChannel;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimChannel', RESEED);&#xA;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -128,12 +128,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'DimDate')&#xA;BEGIN&#xA;&#x9;DROP TABLE dbo.DimDate;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'DimDate')&#xA;BEGIN&#xA;&#x9;DROP TABLE dbo.DimDate;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('DimDate', RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -145,12 +145,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimLocation;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimLocation;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimLocation', RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -162,12 +162,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimProduct;&#xA;END&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimProduct;&#xA;&#xA;&#x9;DBCC CHECKIDENT (dimProduct, RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -179,7 +179,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="dimChannel Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -196,7 +196,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="dimLocation Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="dimProduct Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -230,7 +230,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimChannel"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -247,7 +247,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -264,7 +264,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -281,7 +281,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -415,7 +415,7 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Delete dimDate"
-          TopLeft="911.333333333333,53.8055555555555" />
+          TopLeft="912.333333333333,53.8055555555555" />
         <NodeLayout
           Size="173,42"
           Id="Package\Delete dimLocation"
@@ -424,6 +424,10 @@
           Size="169,42"
           Id="Package\Delete dimProduct"
           TopLeft="344.5,41.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\dimChannel Unknown"
+          TopLeft="70.404761904762,252.984126984127" />
         <NodeLayout
           Size="187,42"
           Id="Package\dimLocation Unknown"
@@ -448,10 +452,6 @@
           Size="162,42"
           Id="Package\Load dimProduct"
           TopLeft="342,190" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\dimChannel Unknown"
-          TopLeft="70.404761904762,252.984126984127" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="735.777777777778,89.861111111111">
@@ -542,7 +542,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="987.361111111111,95.8055555555555">
+          TopLeft="987.861111111111,95.8055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -678,14 +678,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.650793650794"
+              EndConnector="0,26.6507936507937"
               Start="0,0"
-              End="0,19.150793650794">
+              End="0,19.1507936507937">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.150793650794" />
+                    End="0,19.1507936507937" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
