@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{CEC946D4-F8E4-4E3C-BD3C-819510B35E65}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{C8AA4537-931D-4C59-8D1A-AC78E08ACBA6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC3F60bPOC4s0wVE8qyc0GodyYZOwvVe3palzdbhwIi8AAAAAAOgAAAAAIAACAAAADgB0oeyTFPXGtbvOCaqqHjeqY+MCCD+S3WRtWKa+G1ujAAAACl9gVr70fjZBKPAugA8DPR8bnBmQ0FcaECtVqXh3yhVU4MShfUZS7o28UKXdr/taRAAAAAVjTljBVk/QIaxe7lfCHs7fbi+142Ev7yGIcnntb6EZRy7he4PyZfSGBhAXjrOIculD4BbtP9tnAcvtKdpiVLNg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC4DnicUsPr0CS7B8NKuZDZ+D/aVQfdptXMp8bxk0pRqgAAAAAOgAAAAAIAACAAAACtzMM2eUrcrd/E4BiUBeATZEpZBNbA1S+QbTHLANdgDzAAAADMeyK7v5xhH/uZqSdj9sVcyGLhoMglbfkcdVUMdSg5XE/Wzxv74UdUuxa4A5/23eVAAAAAiqLKDjWgYaIOmhHNFEcQcicUzjFgXbmSpp4IRTJbCeAZ/hmgrCnd8oxajO1km8LkxiX8Yv8TNHLBBw7ymj5+4Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -43,7 +43,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create factProductSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -77,7 +77,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create factSRCSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -94,12 +94,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete factProductSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C6FF1FD3-3CE7-4B89-9E4C-1AE8E11CE01E}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factProductSalesTarget')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factProductSalesTarget;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('factProductSalesTarget', RESEED);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factProductSalesTarget')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factProductSalesTarget;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('factProductSalesTarget', RESEED, 0);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -116,7 +116,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C6FF1FD3-3CE7-4B89-9E4C-1AE8E11CE01E}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factSalesActual')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factSalesActual;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('factSalesActual', RESEED);&#xA;&#xA;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factSalesActual')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factSalesActual;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('factSalesActual', RESEED, 0);&#xA;&#xA;&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -128,12 +128,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete factSRCSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C6FF1FD3-3CE7-4B89-9E4C-1AE8E11CE01E}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factSRCSalesTarget')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factSRCSalesTarget;&#xA;&#x9;DBCC CHECKIDENT ('factSRCSalesTarget', RESEED);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'factSRCSalesTarget')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.factSRCSalesTarget;&#xA;&#x9;DBCC CHECKIDENT ('factSRCSalesTarget', RESEED, 0);&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -145,7 +145,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load factProductSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -179,7 +179,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load factSRCSalesTarget"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

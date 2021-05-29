@@ -1,0 +1,251 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2021 12:14:35 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ML-RefVm-765087"
+  DTS:CreatorName="ML-RefVm-765087\imt577user"
+  DTS:DTSID="{535F09D8-10A6-4965-879C-C2295652311E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ExecutePackages"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{9BDDB71D-4698-4859-8D56-60B471DAC110}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ML-RefVm-765087.DestinationSystem.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{74FCF216-A81C-44E9-8D00-6B1B4518ABDC}"
+      DTS:ObjectName="ML-RefVm-765087.DestinationSystem.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ML-RefVm-765087;User ID=sa;Initial Catalog=DestinationSystem;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACfa9JPUnbzDsOZwLIOHYYrZ4PoILBPb78rgn5+HvACygAAAAAOgAAAAAIAACAAAAD+nkCejHflr2WqLBIqPgPb4r6ngdJdRU74Pr1bMVYRqzAAAABd9SFyB9yv9j4KKyMI8xOFq2Iv/pjQx6WTbhDu8usQdzMzaHzbUTKlbfIoxb3yF/lAAAAAylJX5Xz7JAnv2/SMb3cTlT7IU+oWlY8uNc2PvwZPHH/YQsaVFTq9MUoiqS1BPJ6Jk3bHrx2FouMRWcZqxn52Kw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute DimLoading1 Package"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{5F63677F-D92F-481A-8B48-F563FC9F7521}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute DimLoading1 Package"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DimLoadingPackage1.dtsx</PackageName>
+          <PackagePassword
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAnyAWI8vT0I5XqJxJVtBBUjkDVQFwsLfzL9GI6/wYsVQAAAAAOgAAAAAIAACAAAAAIBNM+PeapkiKkIUjasECi3z0VXs8xLFeujooc1SNWwCAAAAB207+NEjktH8sFj9hI6pnDkpCkCaglhrKwlav+tAK+8EAAAACVmzBBseOCRFuJUUic1KCdnhqLy6Gz5P3qs/NHkHONYAyRbI3Y2SBL+0nMRhg9H1y6L2Eu/OyYNkTWk583YHML</PackagePassword>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute DimLoading2 Package"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{4809B910-9B63-4C59-B70D-E03984F3AE8F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute DimLoading2 Package"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DimLoadingPackage2.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute FactLoading Package"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{0B157777-CB42-4F14-8BA5-215B0430E9FF}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute FactLoading Package"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>FactLoading.dtsx</PackageName>
+          <PackagePassword
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACToyWtfGlzFuui5qB9VRt7LyAdtJWg19cfhpeQZLs4RQAAAAAOgAAAAAIAACAAAAC0Q2XQjliLVAdRFXQPZHiou0uPVwVm975Jnuva03DrviAAAAB8HTWn0dMn8LwQGq1EraILAwN5p875DzsMXECeheUcYkAAAAAgKxRornGfIMlckAYrJCbBwSxAsHB3PMSf5g+28SRX1yzl/FEGzCRiXZKYEMhTO767/prAkebpdKkuu4qD4SG2</PackagePassword>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Staging Package"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{E521210C-46CA-4937-A5C0-E200BF2BFB5B}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Staging Package"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>StagingPackage.dtsx</PackageName>
+          <PackagePassword
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB8LwBGyHhx0M9YSvCWqgyYpFg1WxGJfB0KD7fZJ1ZK0wAAAAAOgAAAAAIAACAAAABfgc+F3WV+o2d+9P/J1MdgbqWnIPCMWtJVB5ILPyLrfiAAAAC0fm/h5mCChgkskR8VDg/s8wGOyeG+EgUu8Yc8axqYzEAAAACS+eG0GGcbtpe1oJ90VfBkXGVK6bxf7O/rSOIb1Xfbu7sAqwXKLxEWORFaNpTV46ZIw1emnCctA8Q1Zp2m7wmB</PackagePassword>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{38FE2D67-F029-4BB4-B94D-ABF71E940B5F}"
+      DTS:From="Package\Execute Staging Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute DimLoading1 Package" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D241D41C-74C1-4145-AC72-1CA3A77527A1}"
+      DTS:From="Package\Execute DimLoading1 Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute DimLoading2 Package" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ED535AC8-3495-48AB-BD45-00E8546D87FF}"
+      DTS:From="Package\Execute DimLoading2 Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Execute FactLoading Package" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Execute Staging Package"
+          TopLeft="540,81" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Execute DimLoading1 Package"
+          TopLeft="531,168" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Execute DimLoading2 Package"
+          TopLeft="536,251" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Execute FactLoading Package"
+          TopLeft="526,335" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="644.75,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="649.5,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="652,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,42"
+              Start="0,0"
+              End="-12,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-8,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,21"
+                    Point2="-12,21"
+                    Point3="-12,25" />
+                  <mssgle:LineSegment
+                    End="-12,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

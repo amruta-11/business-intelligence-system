@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{A36FBDD7-3D7F-4F67-A774-F705E1744F70}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{3342BC2D-DC24-4881-8F5B-7AEB48C50E39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNj2eu6zbCHazPcAYRv7+OAkFH50uIAa+yO1ONMIshiAAAAAAOgAAAAAIAACAAAABxEzT9D4o6gRBMswlBIZ7hLo2JBw2OQdbCiVWCi23xTTAAAADH1qik0h4Z5I9kMEeQHUuGzgvMOG8S6M2KbEiK6bKJ6utyZZBCwLLxadL2xA8ZLURAAAAAgbxMVIW8f/b1lIHwEYhuDmxyT/zuluTULIvwGfwa0f+7siIdDze6hm38lhtAvK49mml92w/ND2bS/L5KH8Hbrw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABxJt2CXFZq5he82T+82HtKUGICOXFVOZWdoI6bs6CmigAAAAAOgAAAAAIAACAAAACkp/F1jvOrgWi2J0d2Hwb6OAEpkqBiL/7DD01SHkOsHTAAAAABBgCrpZ3c6BFthMSWg0n27+dSE1IVQsPvyFvBChU+azvfkylOWwl8yf1BVqYE5M1AAAAAaNjRpoNiirdRugFgsdahreKFOXhlKXil3xZ9f5LW7NTQBB7mW7bp6POtY4db9NNzPXo77UffxKXxae8av+KNmQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -60,7 +60,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -77,7 +77,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -94,7 +94,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -116,7 +116,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA;&#xA;&#x9;DELETE FROM dbo.dimChannel;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimChannel', RESEED);&#xA;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimChannel')&#xA;BEGIN&#xA;&#xA;&#x9;DELETE FROM dbo.dimChannel;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimChannel', RESEED, 0);&#xA;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -128,12 +128,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'DimDate')&#xA;BEGIN&#xA;&#x9;DROP TABLE dbo.DimDate;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('DimDate', RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'DimDate')&#xA;BEGIN&#xA;&#x9;DROP TABLE dbo.DimDate;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('DimDate', RESEED, 0);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -145,12 +145,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimLocation;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimLocation', RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimLocation')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimLocation;&#xA;&#x9;&#xA;&#x9;DBCC CHECKIDENT ('dimLocation', RESEED, 0);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -162,12 +162,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{493FC01C-CBCB-4588-963E-56F1E9DAD48D}"
-          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimProduct;&#xA;&#xA;&#x9;DBCC CHECKIDENT (dimProduct, RESEED);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'dimProduct')&#xA;BEGIN&#xA;&#x9;DELETE FROM dbo.dimProduct;&#xA;&#xA;&#x9;DBCC CHECKIDENT (dimProduct, RESEED, 0);&#xA;END&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -196,7 +196,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="dimLocation Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -213,7 +213,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="dimProduct Unknown"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -247,7 +247,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimDate"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -264,7 +264,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimLocation"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -281,7 +281,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load dimProduct"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
