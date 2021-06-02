@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ExecutePackages"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{9BDDB71D-4698-4859-8D56-60B471DAC110}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{351BB032-3D0F-4D96-B103-64FF22AA3ED2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACfa9JPUnbzDsOZwLIOHYYrZ4PoILBPb78rgn5+HvACygAAAAAOgAAAAAIAACAAAAD+nkCejHflr2WqLBIqPgPb4r6ngdJdRU74Pr1bMVYRqzAAAABd9SFyB9yv9j4KKyMI8xOFq2Iv/pjQx6WTbhDu8usQdzMzaHzbUTKlbfIoxb3yF/lAAAAAylJX5Xz7JAnv2/SMb3cTlT7IU+oWlY8uNc2PvwZPHH/YQsaVFTq9MUoiqS1BPJ6Jk3bHrx2FouMRWcZqxn52Kw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABT5PlrOrvEoltahcXqB75nqtkHv8vPTmK1Kg9Nlh3CdQAAAAAOgAAAAAIAACAAAADj2JSJ50Wm8Zpv1rV/81wN38meXtbnbatb+C17IJ1FhzAAAAAyfJgtkAVn4ny0U+o5hh+VNI2VqJbeYWrOXbAWusX+IbRr2Yj2GQFYuo1PjG4EKvJAAAAA6LshNhlM5ej6BbinQA9kDnioofbo6wjx3Fd3qAvuZMlODKWl/1SKC1YxqL6lP2Aj6FVCJBPKyv2cDGojAJ89mQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -50,7 +50,7 @@
           <PackageName>DimLoadingPackage1.dtsx</PackageName>
           <PackagePassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAnyAWI8vT0I5XqJxJVtBBUjkDVQFwsLfzL9GI6/wYsVQAAAAAOgAAAAAIAACAAAAAIBNM+PeapkiKkIUjasECi3z0VXs8xLFeujooc1SNWwCAAAAB207+NEjktH8sFj9hI6pnDkpCkCaglhrKwlav+tAK+8EAAAACVmzBBseOCRFuJUUic1KCdnhqLy6Gz5P3qs/NHkHONYAyRbI3Y2SBL+0nMRhg9H1y6L2Eu/OyYNkTWk583YHML</PackagePassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAH0KhJpla9OkamQ3z7kYSt5/4jhPZ6PqM7/GRzKT7SgAAAAAOgAAAAAIAACAAAADi/PWblnlsB3A+m7dXTCoz5i9MK6lAq+TGA278uVrWsCAAAABEljJ85YIks5Q8INXxBYNMmxYJsUFP/6ZEd1dxkVkW70AAAACuxNeM1o2aNofBxGdaPIMXocjAH8NgPk5857onCOQIY4DlpzLfxcHzKhewLvhLgITBs2UBvnJqzTPCz70Ft2YE</PackagePassword>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -72,6 +72,26 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute Drop Package"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{A1516B1B-2ADE-4DD1-9ECB-885C50B66130}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Drop Package"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DeletePackage.dtsx</PackageName>
+          <PackagePassword
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADfrO3gxKAZIl6G7HMU+t/o/2tOZtPRoNfgFLDIKLJqHAAAAAAOgAAAAAIAACAAAADoxszzypmiPast57G87C6xrWoE/axTg3pSd6BMjt9tmSAAAADFiK+pHsbCMuqCvmHIh2Z0tLMFA+6Wv3AkAwxxf0Vh8EAAAAAsbxPHF2BfFFw7dpa26kTwjFVPft7TF55isIB5DHnSTgpVQD0oDOUtQ3cI6Jj8nbylKBsap0S44QGAZjLjgCfI</PackagePassword>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Execute FactLoading Package"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
@@ -87,7 +107,7 @@
           <PackageName>FactLoading.dtsx</PackageName>
           <PackagePassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACToyWtfGlzFuui5qB9VRt7LyAdtJWg19cfhpeQZLs4RQAAAAAOgAAAAAIAACAAAAC0Q2XQjliLVAdRFXQPZHiou0uPVwVm975Jnuva03DrviAAAAB8HTWn0dMn8LwQGq1EraILAwN5p875DzsMXECeheUcYkAAAAAgKxRornGfIMlckAYrJCbBwSxAsHB3PMSf5g+28SRX1yzl/FEGzCRiXZKYEMhTO767/prAkebpdKkuu4qD4SG2</PackagePassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABd/RObGQIglwwyLJT9EOlE1Mqfj5muJlTKEet6Ys4iTwAAAAAOgAAAAAIAACAAAADcg2ew6x9ZIdSINh/6xgTS26hOWLIFQH2vyDXFYa7p6CAAAAChO1532Jsy/QoE3ir20HIMpAETpdXtCCLHqMablYfErEAAAABTUqLAm9iGe9QHZR1OZLoeUaR8xY3C1OzmUh0pYEUKl4eLGnlYDodtpO4IBv3ImE7hcCa7QAO6imFEOAkNGKVh</PackagePassword>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -107,7 +127,7 @@
           <PackageName>StagingPackage.dtsx</PackageName>
           <PackagePassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB8LwBGyHhx0M9YSvCWqgyYpFg1WxGJfB0KD7fZJ1ZK0wAAAAAOgAAAAAIAACAAAABfgc+F3WV+o2d+9P/J1MdgbqWnIPCMWtJVB5ILPyLrfiAAAAC0fm/h5mCChgkskR8VDg/s8wGOyeG+EgUu8Yc8axqYzEAAAACS+eG0GGcbtpe1oJ90VfBkXGVK6bxf7O/rSOIb1Xfbu7sAqwXKLxEWORFaNpTV46ZIw1emnCctA8Q1Zp2m7wmB</PackagePassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB+triTv6O10RHW+ZO8M81MRgYmVsq/Rv6XWnFPXXBQJAAAAAAOgAAAAAIAACAAAACERx7Smcp4eJQoxGNeIcfyFdJ/KqAJBUuhBqOSADXk8yAAAAD4uCx4gcs1KG0x2ji5W8aRyuZjH6ZNOP8sqffne1ijwEAAAAD4JO5hO9srJdCLtRWNnDCeZ7HkXkL3QuXVi9+v35GRu7WCGM48yDOB7C2mME6FfRM6xVJ/98au930LMt9TLON5</PackagePassword>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -137,6 +157,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Execute FactLoading Package" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A0F320B3-7389-43CA-ABFC-8CCE6D9FC909}"
+      DTS:From="Package\Execute Drop Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Execute Staging Package" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -149,26 +177,26 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Execute Staging Package"
-          TopLeft="540,81" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="232,42"
           Id="Package\Execute DimLoading1 Package"
-          TopLeft="531,168" />
+          TopLeft="536,268" />
         <NodeLayout
           Size="232,42"
           Id="Package\Execute DimLoading2 Package"
-          TopLeft="536,251" />
+          TopLeft="541,351" />
         <NodeLayout
           Size="228,42"
           Id="Package\Execute FactLoading Package"
-          TopLeft="526,335" />
+          TopLeft="531,435" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Execute Staging Package"
+          TopLeft="545,181" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="644.75,123">
+          TopLeft="649.75,223">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -190,7 +218,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="649.5,210">
+          TopLeft="654.5,310">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -212,7 +240,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="652,293">
+          TopLeft="657,393">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -236,6 +264,32 @@
                     Point3="-12,25" />
                   <mssgle:LineSegment
                     End="-12,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Execute Drop Package"
+          TopLeft="551,93" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="647,135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
