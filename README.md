@@ -8,3 +8,5 @@ Following are the steps involved in building this BI system:
 - Loading dimension tables from staging tables
 - Loading fact tables from staging tables
 - Connecting to PowerBI to create visualizations
+
+[Sample PowerBI Dashboards](https://drive.google.com/drive/folders/1U4Evm3Uk7BywDsGGczJrHNWqD1M41kST?usp=sharing)
